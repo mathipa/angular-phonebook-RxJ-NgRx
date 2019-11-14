@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body{
+  margin: 0;
+}
+
+div.container {
+  margin: 0px 40px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 960px) {
+  div.container {
+    margin: 0px 0px;
+  }
+}
+
+
+/*Notifications */
+.notification {
+  background-color: #28a745;
+  color: #ffff;
+  font-size: 20px !important;
+}
+
+/* Material Icons */
+.material-icons.md-14 {
+  font-size: 14px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons {
+  vertical-align: middle;
+}

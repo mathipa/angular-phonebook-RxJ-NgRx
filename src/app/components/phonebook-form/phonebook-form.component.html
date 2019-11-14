@@ -1,0 +1,88 @@
+<div class="container">
+    <mat-toolbar>
+        <span class="mat-headline">
+          {{ phoneBookService.form.controls['$key'].value?"Edit Contact":"ADD New Contact" }}</span>
+        <span class="fill-remaining-space"></span>
+        <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+          <mat-icon>clear</mat-icon></button>
+      </mat-toolbar>
+    <form [formGroup]="phoneBookService.form" (ngSubmit)="onSubmit()" class="phone-book">
+        <mat-grid-list cols="1" rowHeight="300px">
+          <mat-grid-tile>
+            <div class="ctrl-container">
+              <input type="hidden" formControlName='$key'>
+              <!-- Name Input-->
+              <mat-form-field>
+                <input formControlName="name" matInput placeholder="Name*">
+                <mat-error *ngIf="phoneBookService.form.controls['name'].errors?.required">
+                  This field is required.</mat-error>
+                <mat-error *ngIf="phoneBookService.form.controls['name'].hasError('pattern')">
+                  Name cannot contain numbers </mat-error>
+              </mat-form-field>
+
+              <!-- Surname Input-->
+              <mat-form-field>
+                <input formControlName="surname" matInput placeholder="Surname*">
+                <mat-error>This field is required.</mat-error>
+                <mat-error *ngIf="phoneBookService.form.controls['surname'].errors?.required">
+                  This field is required.</mat-error>
+                <mat-error *ngIf="phoneBookService.form.controls['surname'].hasError('pattern')">
+                  First Name cannot contain numbers </mat-error>
+              </mat-form-field>
+
+              <!-- Contact Input-->
+              <mat-form-field>
+                <input formControlName="phone" matInput placeholder="Contact Number*">
+                <mat-error *ngIf="phoneBookService.form.controls['phone'].errors?.required">
+                  This field is required.</mat-error>
+                <mat-error *ngIf="phoneBookService.form.controls['phone'].errors?.minlength">
+                  Minimum 8 Charactors is required.</mat-error>
+              </mat-form-field>
+
+              <!-- Email Input-->
+              <mat-form-field>
+                <input formControlName="email" matInput placeholder="Email">
+                <mat-error>Please provide a valid email address.</mat-error>
+              </mat-form-field>
+            </div>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+              <div class="ctrl-container">
+              <!-- Category Select-->
+              <mat-form-field>
+                  <mat-select id="categories" formControlName="category" placeholder="Category">
+                   <mat-option>None</mat-option>
+                  <ng-container *ngFor="let cat of categories">
+                    <mat-option value="{{cat.value}}">{{cat.value}}</mat-option>
+                  </ng-container>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- Date of Birth-->
+              <mat-form-field>
+                <input formControlName="bornDate" matInput [matDatepicker]="picker" placeholder="Date of birth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+              <!-- Gender Select-->
+              <div class="bottom-pd">
+              <mat-radio-group formControlName="gender">
+                <mat-radio-button value="Male">Male</mat-radio-button>
+                <mat-radio-button value="Female">Female</mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <!-- Buttons -->
+            <div class="btn-row">
+              <button mat-raised-button type="submit"
+               [disabled]="phoneBookService.form.invalid" class="action-btn">Add Contact</button>
+              <button mat-raised-button color="warn" type="submit" (click)="onClear()">Clear</button>
+            </div>
+          </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+ </form>
+</div>
+

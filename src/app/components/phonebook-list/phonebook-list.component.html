@@ -1,0 +1,93 @@
+<div class="container col-md-6">
+<h1 class="mat-headline mat-top-5">Contact Lists</h1>
+    <div class="search-box">
+        <button mat-raised-button (click)="onCreateContact()" class="action-btn">
+            <mat-icon>add</mat-icon>Create
+          </button>
+        <mat-form-field class="search-contact pull-right" floatLabel="never">
+            <input matInput [(ngModel)]="searchWord" placeholder="Search"
+            autocomplete="off" (keyup)="filterContacts()">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear"
+              *ngIf="searchWord" (click)="onSearchClear()">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+      </div>
+
+      <div class="mat-elevation-z8">
+        <mat-table [dataSource]="listData" matSort>
+
+          <!-- Number/id Column -->
+          <ng-container matColumnDef="number">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>#</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="number">{{element.id}}</mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element" data-label="name">{{element.name}}</mat-cell>
+          </ng-container>
+
+          <!-- Surname Column -->
+          <ng-container matColumnDef="surname">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Surname</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="surname">{{element.surname}}</mat-cell>
+          </ng-container>
+
+          <!-- Contact Number Column -->
+          <ng-container matColumnDef="phone">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Contact Number</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="phone">{{element.phone}}</mat-cell>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="email">{{element.email}}</mat-cell>
+          </ng-container>
+
+          <!-- Date of Birth Column -->
+          <ng-container matColumnDef="bornDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="bornDate">{{convertDate(element.bornDate)}}</mat-cell>
+          </ng-container>
+
+          <!-- Category Column -->
+          <ng-container matColumnDef="category">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Category</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="category">{{element.category}}</mat-cell>
+          </ng-container>
+
+          <!-- Gender Column -->
+          <ng-container matColumnDef="gender">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="gender">{{element.gender}}</mat-cell>
+          </ng-container>
+
+          <!-- Actions Column -->
+          <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let row; let i = index">
+                <button mat-icon-button (click)="onEditContact(row)">
+                  <mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="warn" (click)="delContact(i)">
+                  <mat-icon>delete_outline</mat-icon></button>
+              </mat-cell>
+            </ng-container>
+
+          <!-- Like Column -->
+          <ng-container matColumnDef="social">
+              <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <app-phonebook-like></app-phonebook-like>
+              </mat-cell>
+          </ng-container>
+
+            <!-- Pagination -->
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+      </div>
+</div>

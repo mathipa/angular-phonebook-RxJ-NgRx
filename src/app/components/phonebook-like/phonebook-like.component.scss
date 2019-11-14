@@ -1,0 +1,14 @@
+@import "src/theme.scss";
+
+.social {
+  margin: 1px;
+  cursor: grab;
+
+  .thump_up{
+    color: $secondary-color;
+  }
+
+  .thump_down {
+    color: $warning;
+  }
+}

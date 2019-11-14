@@ -1,0 +1,106 @@
+<div class="container" id="aboutus">
+  <h1 class="mat-headline">Phone Book application in Angular </h1>
+  <h6 class="mat-title"> Features</h6>
+  <mat-list role="list">
+      <mat-list-item role="listitem">
+        <i class="material-icons">done</i>Delete and edit entry to the phone book (CRUD)
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <i class="material-icons">done</i>View phone book where a user can search
+         for entries (text box to search and then
+          view the searched results in a list)
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <i class="material-icons">done</i>Phone book data (Name, Surname, Phone number)
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <i class="material-icons">done</i>Angular Material
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <i class="material-icons">done</i> RxJ, NgRx
+      </mat-list-item>
+    </mat-list>
+
+
+  <mat-accordion>
+    <!-- User Story One-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span class="us-title"> User Story #1: </span> As a user I want the ability to
+            search for a record on the phonebook so that I can review the information.
+        </mat-expansion-panel-header>
+        <h3>Description</h3>
+        The user must be able to perform a search on the phonebook from the phonebook landing screen.
+        <h3>Acceptance Criteria </h3>
+        <ol>
+          <li>User can search using Name and/or Surname or phone number. </li>
+          <li>	All records containing searched keywords are displayed in a
+             list form with the searched keywords highlighted.
+          </li>
+          <li>User can clear the search.</li>
+          <li> Where there’s no search results, the user gets notified <span class="phase2">(Version 2)</span></li>
+        </ol>
+      </mat-expansion-panel>
+
+    <!-- User Story Two-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span class="us-title">User Story #2: </span>
+          As a user I want to add a record in the phonebook so that I can retrieve it.
+        </mat-expansion-panel-header>
+        <h3>Description</h3>
+          <P>The user must have the ability to add a record on the phonebook.</P>
+          <P> The system must notify the user of any duplications, however the system
+              must also allow duplicate records and also give the user the ability to merge duplicate records
+             <span class="phase2">(Version 2)</span>
+          </P>
+           <h3>Acceptance Criteria </h3>
+          <ol>
+            <li>User can add a new record </li>
+            <li>User gets notified of duplicated records </li>
+            <li>User has an option to merge duplicate records </li>
+            <li>-	A save button is available on the screen for the user to save the contact</li>
+          </ol>
+      </mat-expansion-panel>
+
+    <!-- User Story Three-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span class="us-title" >User Story #3: </span>
+          As a user I want to delete a record so that I can free some space.
+        </mat-expansion-panel-header>
+          <h3>Description</h3>
+            <P>Delete /  Remove Contact</P>
+            <h3>Acceptance Criteria </h3>
+            <ol>
+              <li>Given that I have already selected a record from the
+                 search, then I must see a delete option.</li>
+              <li>Given that I have selected the delete option
+                  then a message must be displayed requesting me to confirm my selection.
+              </li>
+              <li>Given that I have confirmed the delete action then the record must
+                 be removed from the phonebook and I am directed back to the list view
+              </li>
+            </ol>
+      </mat-expansion-panel>
+
+    <!-- User Story Four-->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <span class="us-title" >User Story #3: </span>
+          As a user I want to update a record so that I can capture the correct information.
+            </mat-expansion-panel-header>
+           <h3>Description</h3>
+            <P>Edit Contact</P>
+            <h3>Acceptance Criteria </h3>
+          <ol>
+            <li>Given that I have already searched for a record,
+               when I click the edit button a modal form must show with editable data.
+            </li>
+            <li>Given that I have already edited the details,
+              when I click save then the updated details must be saved.
+            </li>
+          </ol>
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>

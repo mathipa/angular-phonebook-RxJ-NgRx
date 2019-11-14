@@ -1,0 +1,72 @@
+import { NgModule } from '@angular/core';
+import {
+  MatSidenavModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule,
+  MatMenuModule,
+  MatListModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule,
+  MatTableModule,
+  MatGridListModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSnackBarModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatDialogModule,
+  MatExpansionModule,
+
+} from '@angular/material';
+
+@NgModule({
+  imports: [
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatTableModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatExpansionModule
+  ],
+ exports: [
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatTableModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatExpansionModule
+  ]
+})
+export class MatComponentsModule { }

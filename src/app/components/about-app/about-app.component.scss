@@ -1,0 +1,24 @@
+@import 'src/theme.scss';
+
+h1{
+  margin-top: 25px;
+}
+
+#aboutus {
+.mat-expansion-panel-header {
+  background-color: $secondary-color;
+  color: $white;
+  margin-bottom: 5px;
+}
+
+.us-title {
+   font-weight: 500;
+   margin-right: 5px;
+  }
+
+  .phase2 {
+    color: $warning;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
