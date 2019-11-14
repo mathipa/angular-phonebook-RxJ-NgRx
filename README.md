@@ -2,6 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
 
+A simple Angular Phonebook  to demonstrate the use of Angular features including:
+- Custom filters, sorting and search
+- Delete and edit entry to the phone book (CRUD)
+- Validation
+- RxJ, NgRx
+- Angular Material
+
+<h1>Run app</h1>
+
+Clone repo git clone https://github.com/mathipa//angular-phonebook-RxJ-NgRx.git
+
+- cd angular-phoneBook
+- npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
